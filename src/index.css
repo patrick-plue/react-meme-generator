@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,46 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.memeContainer {
+  display: flex;
+  align-items: center;
+}
+
+.meme {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+}
+
+.memeTitle,
+.memeSubtitle {
+  text-align: center;
+  position: relative;
+  background-color: white;
+  padding: 1%;
+  width: fit-content;
+}
+
+.memeTitle {
+  top: 50px;
+}
+
+.memeSubtitle {
+  bottom: 50px;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  margin: 2%;
 }
