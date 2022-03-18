@@ -4,7 +4,11 @@ function Input({ changeText }) {
   return (
     <div>
       <form action="">
-        <input type="text" onChange={(e) => changeText(e.target.value)} />
+        <input
+          className="input"
+          type="text"
+          onChange={(e) => changeText(e.target.value)}
+        />
       </form>
     </div>
   );
