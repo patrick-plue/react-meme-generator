@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import domtoimage from 'dom-to-image';
 
 function Picture({
   memes,
@@ -7,9 +8,31 @@ function Picture({
   indexCurrentPicture,
   userImage,
 }) {
+  const createdMeme = useRef();
+  const [userMemeDownload, setUserMemeDownload] = useState();
+  if (createdMeme) {
+    console.log(createdMeme);
+  }
+
+  function generate() {
+    domtoimage
+      .toJpeg(createdMeme.current, { quality: 0.95 })
+      .then(function (dataUrl) {
+        setUserMemeDownload(dataUrl);
+      });
+  }
+
   return (
     <>
-      <div className="memeContainer">
+      <a
+        onClick={() => generate()}
+        download="my-image.jpg"
+        href={userMemeDownload}
+      >
+        Generate
+      </a>
+
+      <div className="memeContainer" ref={createdMeme}>
         <p className="memeTitle">{topText}</p>
         {memes.length > 0 && !userImage && (
           <img

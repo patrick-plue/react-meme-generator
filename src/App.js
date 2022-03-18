@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import domtoimage from 'dom-to-image';
 
 import Picture from './Picture';
 import Input from './Input';
