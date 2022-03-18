@@ -32,10 +32,13 @@ code {
   margin: 2%;
 }
 
-.buttonContainer {
+.buttonsContainer {
+  display: flex;
 }
 
 .btn {
+  margin: 1%;
+  width: 100px;
 }
 
 .memeContainer {
@@ -63,7 +66,7 @@ code {
 }
 
 .memeTitle {
-  top: 60px;
+  top: 55px;
 }
 
 .memeSubtitle {

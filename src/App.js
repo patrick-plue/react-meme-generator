@@ -11,7 +11,8 @@ function App() {
   const [memes, setMemes] = useState([]);
   const [topText, setTopText] = useState('Write');
   const [bottomText, setBottomText] = useState('here');
-  console.log('toptext', topText);
+  const [indexCurrentPicture, setIndexCurrentPicture] = useState(1);
+  console.log(indexCurrentPicture);
 
   // useEffects
 
@@ -39,6 +40,14 @@ function App() {
     setBottomText(input);
   };
 
+  const changePicture = () => {
+    if (indexCurrentPicture > memes.length) {
+      setIndexCurrentPicture(1);
+    } else {
+      setIndexCurrentPicture((prev) => prev + 1);
+    }
+  };
+
   return (
     <div className="App">
       <h1>React Meme Generator</h1>
@@ -46,8 +55,13 @@ function App() {
         <Input changeText={changeTopText} />
         <Input changeText={changeBottomText} />
       </div>
-      <Buttons />
-      <Picture memes={memes} topText={topText} bottomText={bottomText} />
+      <Buttons changePicture={changePicture} />
+      <Picture
+        memes={memes}
+        topText={topText}
+        bottomText={bottomText}
+        indexCurrentPicture={indexCurrentPicture}
+      />
     </div>
   );
 }

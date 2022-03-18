@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Buttons() {
+function Buttons({ changePicture }) {
   return (
     <div className="buttonsContainer">
-      <button className="btn">Change Picture</button>
+      <button className="btn" onClick={() => changePicture()}>
+        Change Picture
+      </button>
       <button className="btn">Load Picture</button>
       <button className="btn">Generate</button>
     </div>
