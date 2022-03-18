@@ -11,7 +11,7 @@ function Picture({
   const createdMeme = useRef();
   const [userMemeDownload, setUserMemeDownload] = useState();
   if (createdMeme) {
-    console.log(createdMeme);
+    console.log(createdMeme.current);
   }
 
   function generate() {
@@ -24,12 +24,9 @@ function Picture({
 
   return (
     <>
-      <a
-        onClick={() => generate()}
-        download="my-image.jpg"
-        href={userMemeDownload}
-      >
-        Generate
+      <button onClick={() => generate()}>Generate</button>
+      <a download="my-image.jpg" href={userMemeDownload}>
+        Download
       </a>
 
       <div className="memeContainer" ref={createdMeme}>
