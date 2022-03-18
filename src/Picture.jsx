@@ -1,16 +1,13 @@
 import React from 'react';
 
-function Picture({ memes }) {
-  if (memes) {
-    console.log(memes[0]);
-  }
+function Picture({ memes, topText, bottomText }) {
   return (
     <div className="memeContainer">
       {memes.length > 0 && (
         <div>
-          <p className="memeTitle">Hello!</p>
+          <p className="memeTitle">{topText}</p>
           <img className="meme" src={memes[1].url} />
-          <p className="memeSubtitle">you!</p>
+          <p className="memeSubtitle">{bottomText}</p>
         </div>
       )}
     </div>

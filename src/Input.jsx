@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Input() {
+function Input({ changeText }) {
   return (
     <div>
       <form action="">
-        <input type="text" />
+        <input type="text" onChange={(e) => changeText(e.target.value)} />
       </form>
     </div>
   );

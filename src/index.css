@@ -26,6 +26,18 @@ code {
   height: 100vh;
 }
 
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  margin: 2%;
+}
+
+.buttonContainer {
+}
+
+.btn {
+}
+
 .memeContainer {
   display: flex;
   align-items: center;
@@ -39,23 +51,21 @@ code {
 
 .memeTitle,
 .memeSubtitle {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
   position: relative;
   background-color: white;
-  padding: 1%;
+  padding: 2%;
+  border-radius: 10%;
+  font-size: 1.2rem;
   width: fit-content;
+  margin: 0 auto;
 }
 
 .memeTitle {
-  top: 50px;
+  top: 60px;
 }
 
 .memeSubtitle {
-  bottom: 50px;
-}
-
-.inputContainer {
-  display: flex;
-  gap: 10px;
-  margin: 2%;
+  bottom: 70px;
 }
