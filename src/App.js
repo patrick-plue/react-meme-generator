@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Picture from './Picture';
 import Input from './Input';
 import Buttons from './Buttons';
+import ImageInput from './ImageInput';
 import './index.css';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   const [topText, setTopText] = useState('Write');
   const [bottomText, setBottomText] = useState('here');
   const [indexCurrentPicture, setIndexCurrentPicture] = useState(1);
-  console.log(indexCurrentPicture);
+  const [userImage, setUserImage] = useState();
 
   // useEffects
 
@@ -58,7 +59,9 @@ function App() {
         topText={topText}
         bottomText={bottomText}
         indexCurrentPicture={indexCurrentPicture}
+        userImage={userImage}
       />
+      <ImageInput setUserImage={setUserImage} userImage={userImage} />
     </div>
   );
 }

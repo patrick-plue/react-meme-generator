@@ -1,15 +1,24 @@
 import React from 'react';
 
-function Picture({ memes, topText, bottomText, indexCurrentPicture }) {
+function Picture({
+  memes,
+  topText,
+  bottomText,
+  indexCurrentPicture,
+  userImage,
+}) {
   return (
     <>
-      {memes.length > 0 && (
-        <div className="memeContainer">
-          <p className="memeTitle">{topText}</p>
+      <div className="memeContainer">
+        <p className="memeTitle">{topText}</p>
+        {memes.length > 0 && !userImage && (
           <img className="meme" src={memes[indexCurrentPicture].url} />
-          <p className="memeSubtitle">{bottomText}</p>
-        </div>
-      )}
+        )}
+        {userImage && (
+          <img className="meme" src={URL.createObjectURL(userImage)} />
+        )}
+        <p className="memeSubtitle">{bottomText}</p>
+      </div>
     </>
   );
 }
