@@ -41,11 +41,8 @@ function App() {
   };
 
   const changePicture = () => {
-    if (indexCurrentPicture > memes.length) {
-      setIndexCurrentPicture(1);
-    } else {
-      setIndexCurrentPicture((prev) => prev + 1);
-    }
+    const randomNumber = Math.floor(Math.random() * memes.length);
+    setIndexCurrentPicture(randomNumber);
   };
 
   return (
