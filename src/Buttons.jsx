@@ -6,7 +6,6 @@ function Buttons({ changePicture }) {
       <button className="btn" onClick={() => changePicture()}>
         Change Picture
       </button>
-      <button className="btn">Load Picture</button>
       <button className="btn">Generate</button>
     </div>
   );

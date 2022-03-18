@@ -12,10 +12,18 @@ function Picture({
       <div className="memeContainer">
         <p className="memeTitle">{topText}</p>
         {memes.length > 0 && !userImage && (
-          <img className="meme" src={memes[indexCurrentPicture].url} />
+          <img
+            className="meme"
+            src={memes[indexCurrentPicture].url}
+            alt="meme"
+          />
         )}
         {userImage && (
-          <img className="meme" src={URL.createObjectURL(userImage)} />
+          <img
+            className="meme"
+            src={URL.createObjectURL(userImage)}
+            alt="meme"
+          />
         )}
         <p className="memeSubtitle">{bottomText}</p>
       </div>
