@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import domtoimage from 'dom-to-image';
 
 import Picture from './Picture';
 import Input from './Input';
-import Buttons from './Buttons';
 import ImageInput from './ImageInput';
 import './index.css';
+import Buttons from './Buttons';
 
 function App() {
   const url = 'https://api.imgflip.com/get_memes';
@@ -49,19 +48,20 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React Meme Generator</h1>
+      <h1 className="pageTitle">React Meme Generator</h1>
       <div className="inputContainer">
         <Input changeText={changeTopText} />
         <Input changeText={changeBottomText} />
+        <ImageInput setUserImage={setUserImage} userImage={userImage} />
+        <Buttons changePicture={changePicture} />
       </div>
-      <Buttons changePicture={changePicture} />
-      <ImageInput setUserImage={setUserImage} userImage={userImage} />
       <Picture
         memes={memes}
         topText={topText}
         bottomText={bottomText}
         indexCurrentPicture={indexCurrentPicture}
         userImage={userImage}
+        changePicture={changePicture}
       />
     </div>
   );

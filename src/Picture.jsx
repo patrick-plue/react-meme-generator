@@ -7,6 +7,7 @@ function Picture({
   bottomText,
   indexCurrentPicture,
   userImage,
+  changePicture,
 }) {
   const createdMeme = useRef();
   const [userMemeDownload, setUserMemeDownload] = useState();
@@ -14,17 +15,17 @@ function Picture({
     console.log(createdMeme.current);
   }
 
-  function generate() {
-    domtoimage
-      .toJpeg(createdMeme.current, { quality: 0.95 })
-      .then(function (dataUrl) {
+  useEffect(() => {
+    domtoimage.toJpeg(createdMeme.current, { quality: 0.95 }).then(
+      function (dataUrl) {
         setUserMemeDownload(dataUrl);
-      });
-  }
+      },
+      [memes]
+    );
+  });
 
   return (
     <>
-      <button onClick={() => generate()}>Generate</button>
       <a download="my-image.jpg" href={userMemeDownload}>
         Download
       </a>

@@ -24,10 +24,22 @@ code {
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  background-color: rgb(206, 92, 92);
+}
+
+.pageTitle {
+  margin: 1%;
+  padding: 1%;
+}
+
+.flexContainer {
+  display: flex;
 }
 
 .inputContainer {
   display: flex;
+  flex-direction: column;
+
   margin: 2%;
 }
 
@@ -35,44 +47,36 @@ code {
   padding: 3%;
 }
 
-.buttonsContainer {
-  display: flex;
-}
-
 .btn {
   margin: 1%;
   width: 100px;
+  padding: 10px;
 }
 
 .memeContainer {
+  position: relative;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 600px;
+  justify-content: center;
 }
 
-.meme {
-  height: 500px;
+.memeContainer > img {
+  height: 400px;
 }
 
 .memeTitle,
 .memeSubtitle {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-align: center;
-  position: relative;
-  padding: 2%;
+  position: absolute;
   font-size: 2.5rem;
-  width: fit-content;
-  margin: 0 auto;
   opacity: 0.9;
   color: white;
   text-shadow: 5px 4px black;
 }
 
 .memeTitle {
-  top: 70px;
+  top: 10px;
 }
 
 .memeSubtitle {
-  bottom: 70px;
+  bottom: 20px;
 }
