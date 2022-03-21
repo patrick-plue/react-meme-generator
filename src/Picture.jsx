@@ -26,7 +26,7 @@ function Picture({
 
   return (
     <>
-      <a download="my-image.jpg" href={userMemeDownload}>
+      <a id="downloadLink" download="my-image.jpg" href={userMemeDownload}>
         Download
       </a>
 

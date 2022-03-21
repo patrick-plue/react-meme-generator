@@ -50,10 +50,11 @@ function App() {
     <div className="App">
       <h1 className="pageTitle">React Meme Generator</h1>
       <div className="inputContainer">
-        <Input changeText={changeTopText} />
-        <Input changeText={changeBottomText} />
+        <div className="inputField">
+          <Input changeText={changeTopText} defaultText={topText} />
+          <Input changeText={changeBottomText} defaultText={bottomText} />
+        </div>
         <ImageInput setUserImage={setUserImage} userImage={userImage} />
-        <Buttons changePicture={changePicture} />
       </div>
       <Picture
         memes={memes}
@@ -63,6 +64,7 @@ function App() {
         userImage={userImage}
         changePicture={changePicture}
       />
+      <Buttons changePicture={changePicture} />
     </div>
   );
 }

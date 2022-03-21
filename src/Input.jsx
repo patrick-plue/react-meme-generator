@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Input({ changeText }) {
+function Input({ changeText, defaultText }) {
   return (
     <div>
       <form action="">
@@ -8,6 +8,7 @@ function Input({ changeText }) {
           className="input"
           type="text"
           onChange={(e) => changeText(e.target.value)}
+          value={defaultText}
         />
       </form>
     </div>
