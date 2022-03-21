@@ -42,8 +42,14 @@ function App() {
   };
 
   const changePicture = () => {
-    const randomNumber = Math.floor(Math.random() * memes.length);
-    setIndexCurrentPicture(randomNumber);
+    if (!userImage) {
+      const randomNumber = Math.floor(Math.random() * memes.length);
+      setIndexCurrentPicture(randomNumber);
+    } else {
+      setUserImage(null);
+      const randomNumber = Math.floor(Math.random() * memes.length);
+      setIndexCurrentPicture(randomNumber);
+    }
   };
 
   return (
@@ -54,7 +60,6 @@ function App() {
           <Input changeText={changeTopText} defaultText={topText} />
           <Input changeText={changeBottomText} defaultText={bottomText} />
         </div>
-        <ImageInput setUserImage={setUserImage} userImage={userImage} />
       </div>
       <Picture
         memes={memes}
@@ -64,7 +69,8 @@ function App() {
         userImage={userImage}
         changePicture={changePicture}
       />
-      <Buttons changePicture={changePicture} />
+      <ImageInput setUserImage={setUserImage} userImage={userImage} />
+      <Buttons changePicture={changePicture} text={'Change Picture'} />
     </div>
   );
 }

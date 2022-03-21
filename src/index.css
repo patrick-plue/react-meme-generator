@@ -5,7 +5,7 @@
 }
 
 :root {
-  font-size: clamp(10px, 1.5vw, 25px);
+  font-size: clamp(18px, 1.5vw, 25px);
 }
 
 body {
@@ -35,7 +35,8 @@ code {
 .pageTitle {
   margin: 10px;
   padding: 10px;
-  font-size: 4rem;
+  font-size: 3rem;
+  color: rgb(255, 243, 225);
 }
 
 .flexContainer {
@@ -51,7 +52,8 @@ code {
 
 .input {
   padding: 10%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
 }
 
 .inputField {
@@ -60,8 +62,9 @@ code {
 }
 .btn {
   margin: 18px;
-  width: 100px;
+  font-size: 1rem;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .memeContainer {
@@ -71,14 +74,14 @@ code {
 }
 
 .memeContainer > img {
-  height: 25rem;
+  height: 20rem;
 }
 
 .memeTitle,
 .memeSubtitle {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   position: absolute;
-  font-size: 3rem;
+  font-size: 1.7rem;
   opacity: 0.9;
   color: white;
   text-shadow: 5px 4px black;
@@ -89,7 +92,7 @@ code {
 }
 
 .memeSubtitle {
-  bottom: 20px;
+  bottom: 10px;
 }
 
 #downloadLink {
@@ -99,4 +102,6 @@ code {
   margin: 10px;
   color: black;
   text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
 }

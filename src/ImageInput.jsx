@@ -8,6 +8,7 @@ function ImageInput({ setUserImage, userImage }) {
           onChange={(file) => setUserImage(file.target.files[0])}
           type="file"
           accept="image/"
+          className="imageInput"
         />
       </div>
     </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Buttons({ changePicture }) {
+function Buttons({ changePicture, text }) {
   return (
     <button className="btn" onClick={() => changePicture()}>
-      Change Picture
+      {text}
     </button>
   );
 }
