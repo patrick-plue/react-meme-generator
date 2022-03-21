@@ -37,20 +37,26 @@ function Picture({
 
   return (
     <>
-      <a id="downloadLink" download="my-image.jpg" href={userMemeDownload}>
-        Download
-      </a>
-      <div className="fontsizeButtons">
-        <label>font size</label>
-        <button onClick={() => changeFontSize(-5)}>-</button>
-        <button onClick={() => changeFontSize(5)}>+</button>
+      <div className="btnContainer">
+        <div className="fontsizeButtons">
+          <label>font size</label>
+          <button className="btn" onClick={() => changeFontSize(-5)}>
+            -
+          </button>
+          <button className="btn" onClick={() => changeFontSize(5)}>
+            +
+          </button>
+        </div>
+        <div className="pictureSizeButtons">
+          <label>picture size</label>
+          <button className="btn" onClick={() => changePictureSize(-50)}>
+            -
+          </button>
+          <button className="btn" onClick={() => changePictureSize(+50)}>
+            +
+          </button>
+        </div>
       </div>
-      <div className="pictureSizeButtons">
-        <label>picture size</label>
-        <button onClick={() => changePictureSize(-50)}>-</button>
-        <button onClick={() => changePictureSize(+50)}>+</button>
-      </div>
-
       <div className="memeContainer" ref={createdMeme}>
         <p style={{ fontSize: `${fontSize}pt` }} className="memeTitle">
           {topText}
@@ -74,6 +80,9 @@ function Picture({
           {bottomText}
         </p>
       </div>
+      <a id="downloadLink" download="my-image.jpg" href={userMemeDownload}>
+        Download
+      </a>
     </>
   );
 }

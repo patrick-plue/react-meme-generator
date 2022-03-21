@@ -28,7 +28,6 @@ code {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
   padding: 10px;
 }
 
@@ -39,30 +38,23 @@ code {
   color: rgb(255, 243, 225);
 }
 
-.flexContainer {
-  display: flex;
-}
-
 .inputContainer {
   display: flex;
-  flex-direction: column;
-
-  margin: 10px;
 }
 
 .input {
   padding: 10%;
   font-size: 1.2rem;
   border-radius: 10px;
+  width: 8rem;
 }
 
 .inputField {
   display: flex;
-  gap: 50px;
 }
 .btn {
-  margin: 18px;
-  font-size: 1rem;
+  margin: 5px;
+  font-size: 0.8rem;
   padding: 10px;
   border-radius: 5px;
 }
@@ -75,6 +67,7 @@ code {
 
 .memeContainer > img {
   height: 20rem;
+  box-shadow: 0px 0px 5px 0px black;
 }
 
 .memeTitle,
@@ -99,9 +92,15 @@ code {
   padding: 10px;
   border: 1px dashed black;
   background-color: azure;
-  margin: 10px;
+  margin: px;
   color: black;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-radius: 5px;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 10px;
+  margin: 5px;
 }

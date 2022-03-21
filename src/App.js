@@ -55,11 +55,9 @@ function App() {
   return (
     <div className="App">
       <h1 className="pageTitle">React Meme Generator</h1>
-      <div className="inputContainer">
-        <div className="inputField">
-          <Input changeText={changeTopText} defaultText={topText} />
-          <Input changeText={changeBottomText} defaultText={bottomText} />
-        </div>
+      <div className="inputField">
+        <Input changeText={changeTopText} defaultText={topText} />
+        <Input changeText={changeBottomText} defaultText={bottomText} />
       </div>
       <ImageInput setUserImage={setUserImage} userImage={userImage} />
       <Buttons changePicture={changePicture} text={'Change Picture'} />
