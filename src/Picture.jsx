@@ -15,8 +15,8 @@ function Picture({
     console.log(createdMeme.current);
   }
 
-  const [fontSizeTitle, setfontSizeTitle] = useState(30);
-  const [fontSizeSubtitle, setfontSizeSubtitle] = useState(30);
+  const [fontSize, setfontSize] = useState(30);
+  const [pictureSize, setPictureSize] = useState(300);
 
   useEffect(() => {
     domtoimage.toJpeg(createdMeme.current, { quality: 0.95 }).then(
@@ -27,12 +27,12 @@ function Picture({
     );
   });
 
-  function changFontSizeTitle(value) {
-    setfontSizeTitle((prev) => prev + value);
+  function changeFontSize(value) {
+    setfontSize((prev) => prev + value);
   }
 
-  function changFontSizeSubTitle(value) {
-    setfontSizeSubtitle((prev) => prev + value);
+  function changePictureSize(value) {
+    setPictureSize((prev) => prev + value);
   }
 
   return (
@@ -41,11 +41,18 @@ function Picture({
         Download
       </a>
       <div className="fontsizeButtons">
-        <button onClick={() => changFontSizeTitle(5)}>increase</button>
-        <button onClick={() => changFontSizeTitle(-5)}>decrease</button>
+        <label>font size</label>
+        <button onClick={() => changeFontSize(-5)}>-</button>
+        <button onClick={() => changeFontSize(5)}>+</button>
       </div>
+      <div className="pictureSizeButtons">
+        <label>picture size</label>
+        <button onClick={() => changePictureSize(-50)}>-</button>
+        <button onClick={() => changePictureSize(+50)}>+</button>
+      </div>
+
       <div className="memeContainer" ref={createdMeme}>
-        <p style={{ fontSize: `${fontSizeTitle}pt` }} className="memeTitle">
+        <p style={{ fontSize: `${fontSize}pt` }} className="memeTitle">
           {topText}
         </p>
         {memes.length > 0 && !userImage && (
@@ -53,6 +60,7 @@ function Picture({
             className="meme"
             src={memes[indexCurrentPicture].url}
             alt="meme"
+            style={{ height: `${pictureSize}pt` }}
           />
         )}
         {userImage && (
@@ -62,16 +70,9 @@ function Picture({
             alt="meme"
           />
         )}
-        <p
-          style={{ fontSize: `${fontSizeSubtitle}pt` }}
-          className="memeSubtitle"
-        >
+        <p style={{ fontSize: `${fontSize}pt` }} className="memeSubtitle">
           {bottomText}
         </p>
-      </div>
-      <div className="fontsizeButtons">
-        <button onClick={() => changFontSizeSubTitle(5)}>increase</button>
-        <button onClick={() => changFontSizeSubTitle(-5)}>decrease</button>
       </div>
     </>
   );

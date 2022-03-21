@@ -61,6 +61,8 @@ function App() {
           <Input changeText={changeBottomText} defaultText={bottomText} />
         </div>
       </div>
+      <ImageInput setUserImage={setUserImage} userImage={userImage} />
+      <Buttons changePicture={changePicture} text={'Change Picture'} />
       <Picture
         memes={memes}
         topText={topText}
@@ -69,8 +71,6 @@ function App() {
         userImage={userImage}
         changePicture={changePicture}
       />
-      <ImageInput setUserImage={setUserImage} userImage={userImage} />
-      <Buttons changePicture={changePicture} text={'Change Picture'} />
     </div>
   );
 }
