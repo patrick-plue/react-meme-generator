@@ -11,19 +11,17 @@ function Picture({
 }) {
   const createdMeme = useRef();
   const [userMemeDownload, setUserMemeDownload] = useState();
-  if (createdMeme) {
-    console.log(createdMeme.current);
-  }
 
   const [fontSize, setfontSize] = useState(30);
   const [pictureSize, setPictureSize] = useState(300);
+  console.log(pictureSize);
 
   useEffect(() => {
     domtoimage.toJpeg(createdMeme.current, { quality: 0.95 }).then(
       function (dataUrl) {
         setUserMemeDownload(dataUrl);
       },
-      [memes]
+      [memes, userImage]
     );
   });
 
@@ -38,23 +36,27 @@ function Picture({
   return (
     <>
       <div className="btnContainer">
-        <div className="fontsizeButtons">
+        <div className="fontSizeButtons">
           <label>font size</label>
-          <button className="btn" onClick={() => changeFontSize(-5)}>
-            -
-          </button>
-          <button className="btn" onClick={() => changeFontSize(5)}>
-            +
-          </button>
+          <div>
+            <button className="btn2" onClick={() => changeFontSize(-5)}>
+              -
+            </button>
+            <button className="btn2" onClick={() => changeFontSize(5)}>
+              +
+            </button>
+          </div>
         </div>
         <div className="pictureSizeButtons">
           <label>picture size</label>
-          <button className="btn" onClick={() => changePictureSize(-50)}>
-            -
-          </button>
-          <button className="btn" onClick={() => changePictureSize(+50)}>
-            +
-          </button>
+          <div>
+            <button className="btn2" onClick={() => changePictureSize(-50)}>
+              -
+            </button>
+            <button className="btn2" onClick={() => changePictureSize(+50)}>
+              +
+            </button>
+          </div>
         </div>
       </div>
       <div className="memeContainer" ref={createdMeme}>
@@ -74,6 +76,7 @@ function Picture({
             className="meme"
             src={URL.createObjectURL(userImage)}
             alt="meme"
+            style={{ height: `${pictureSize}pt` }}
           />
         )}
         <p style={{ fontSize: `${fontSize}pt` }} className="memeSubtitle">

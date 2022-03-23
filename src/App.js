@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="pageTitle">React Meme Generator</h1>
+      <h1 className="pageTitle">Meme Generator</h1>
       <div className="inputField">
         <Input changeText={changeTopText} defaultText={topText} />
         <Input changeText={changeBottomText} defaultText={bottomText} />

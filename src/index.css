@@ -59,6 +59,18 @@ code {
   border-radius: 5px;
 }
 
+.btn2 {
+  font-size: 0.8rem;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.btn:hover,
+btn2:hover {
+  cursor: pointer;
+}
+
 .memeContainer {
   position: relative;
   display: flex;
@@ -75,9 +87,9 @@ code {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   position: absolute;
   font-size: 1.7rem;
-  opacity: 0.9;
+  opacity: 1;
   color: white;
-  text-shadow: 5px 4px black;
+  text-shadow: 3px 3px black;
 }
 
 .memeTitle {
@@ -92,7 +104,7 @@ code {
   padding: 10px;
   border: 1px dashed black;
   background-color: azure;
-  margin: px;
+  margin: 5px;
   color: black;
   text-decoration: none;
   font-size: 0.8rem;
@@ -101,6 +113,18 @@ code {
 
 .btnContainer {
   display: flex;
+  justify-content: center;
   gap: 10px;
   margin: 5px;
+  font-size: 18px;
+}
+
+.fontSizeButtons,
+.pictureSizeButtons {
+  background-color: aliceblue;
+  padding: 1%;
+  border-radius: 5px;
+  border: 1px dashed black;
+  min-width: 150px;
+  text-align: center;
 }
