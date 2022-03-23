@@ -23,7 +23,6 @@ function App() {
       .then(function (response) {
         // handle success
         setMemes(response.data.data.memes);
-        console.log(response);
       })
       .catch(function (error) {
         // handle error

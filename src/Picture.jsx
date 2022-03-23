@@ -14,7 +14,6 @@ function Picture({
 
   const [fontSize, setfontSize] = useState(30);
   const [pictureSize, setPictureSize] = useState(300);
-  console.log(pictureSize);
 
   useEffect(() => {
     domtoimage.toJpeg(createdMeme.current, { quality: 0.95 }).then(
